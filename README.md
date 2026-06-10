@@ -29,6 +29,7 @@ xcodebuild -downloadPlatform ios
 ```shell
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/depot_tools
 ```
+>下载约`75M`,占用约`87M`
 
 添加工具链到环境变量
 ```shell
@@ -59,11 +60,13 @@ cd ~/chromium/src
 ```shell
 gclient sync
 ```
+>下载约`700M`
 
 生成ninja文件
 ```shell
 gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_blink=true'
 ```
+>占用约`2G`
 
 ## 开始编译
 ```shell
