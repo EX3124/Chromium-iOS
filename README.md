@@ -33,9 +33,8 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/dep
 
 添加工具链到环境变量
 ```shell
-export PATH="/Users/[用户名]/depot_tools:$PATH"
+export PATH="$HOME/depot_tools:$HOME/depot_tools/python-bin:$PATH"
 ```
->将`[用户名]`换成你的mac os用户名
 
 ## 拉取chromium
 创建文件夹并进入
