@@ -34,7 +34,7 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/dep
 ```shell
 export PATH="/Users/[用户名]/depot_tools:$PATH"
 ```
->将`[用户名]`换成mac os用户名
+>将`[用户名]`换成你的mac os用户名
 
 ## 拉取chromium
 创建文件夹并进入
