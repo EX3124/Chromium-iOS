@@ -47,7 +47,7 @@ cd ~/chromium
 ```shell
 fetch --no-history ios
 ```
->需拉取 约20G
+>约20G
 
 ## 生成编译目标
 进入源码目录
