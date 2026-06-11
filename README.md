@@ -63,7 +63,7 @@ gclient sync
 
 生成ninja文件
 ```shell
-gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_blink=true'
+gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
 ```
 >占用约`2G`
 
@@ -71,4 +71,4 @@ gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_co
 ```shell
 autoninja -C out/Release-iphoneos chrome
 ```
->根据核心数,编译时间会有不同,1个核心会分配512个线程
+>cpu核心越多越快
