@@ -39,7 +39,7 @@ export PATH="$HOME/depot_tools:$HOME/depot_tools/python-bin:$PATH"
 ## 拉取chromium
 创建文件夹并进入
 ```shell
-mkdir -p ~/chromium/src/out/Release-iphoneos
+mkdir -p ~/chromium/src/out/Release-iphoneos/Payload
 cd ~/chromium
 ```
 
@@ -72,3 +72,9 @@ gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_co
 autoninja -C out/Release-iphoneos chrome
 ```
 >cpu核心越多越快
+
+## 打包ipa
+```shell
+mv ~/chromium/src/out/Release-iphoneos/Chromium.app ~/chromium/src/out/Release-iphoneos/Payload
+zip -r ~/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
+```
