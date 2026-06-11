@@ -1,11 +1,11 @@
 # Chromium-iOS
-github action的runner硬盘只有14G,很难编出工件,这里提供一个实机编译方法
+Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories)硬盘只有14G,很难编出工件,这里提供一个实机编译方法
 
 ## 设置Xcode
-下载[Xcode 26.3](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_26.3/Xcode_26.3_Universal.xip)
->需要登录apple id
+`Xcode`的版本需要比编译目标版本高,可以在[ios_sdk_overrides.gni](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/build/config/ios/ios_sdk_overrides.gni)看到目前主线开启`blink`需要`ios26.0`,也就是[Xcode 26.0](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_26/Xcode_26_Universal.xip)或更高版本
+>登录apple id以下载
 
-打开(解压)下载的xip文件,将`Xcode.app`移到`应用程序`中
+打开(解压)下载的`.xip`文件,将`Xcode.app`移到`应用程序`中
 
 使用以下命令查看并同意协议
 ```shell
@@ -22,7 +22,7 @@ xcodebuild -runFirstLaunch
 ```shell
 xcodebuild -downloadPlatform ios
 ```
->root用户环境与普通用户不一样,Xcode会找不到sdk
+>`root用户`环境与`普通用户`不一样,`Xcode`会找不到sdk
 
 ## 配置工具链
 拉取工具链仓库
@@ -43,14 +43,14 @@ mkdir -p ~/chromium/src/out/Release-iphoneos/Payload
 cd ~/chromium
 ```
 
-拉取ios版
+拉取`ios`版
 ```shell
 fetch --no-history ios
 ```
 >下载约`8G`,占用约`28G`
 
 <details>
-<summary>拉取特定版本</summary>
+<summary>按版本号拉取</summary>
 
 ```shell
 gclient config --spec 'solutions = [    
@@ -83,7 +83,7 @@ gclient sync
 ```
 >下载约`700M`
 
-生成ninja文件
+生成`args.gn`以确立编译目标
 ```shell
 gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
 ```
@@ -93,11 +93,11 @@ gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_co
 ```shell
 autoninja -C out/Release-iphoneos chrome
 ```
->分配的cpu核心越多越快
+>分配的cpu核心越多,编译越快
 
 ## 打包ipa
 ```shell
 mv ~/chromium/src/out/Release-iphoneos/Chromium.app ~/chromium/src/out/Release-iphoneos/Payload
-zip -r ~/Downloads/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
+zip -r ~/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
 ```
->`chromium.ipa`文件在`边栏`的`下载`中,未签名
+`$HOME/chromium.ipa`,未签名
