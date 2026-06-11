@@ -52,12 +52,11 @@ fetch --no-history ios
 <details>
 <summary>拉取特定版本</summary>
 
-手动fetch
 ```shell
 gclient config --spec 'solutions = [    
   {
     "name": "src",
-    "url": "https://chromium.googlesource.com/chromium/src.git@[]",
+    "url": "https://chromium.googlesource.com/chromium/src.git@[目标版本号]",
     "managed": False,
     "custom_deps": {},
     "custom_vars": {},
@@ -66,7 +65,9 @@ gclient config --spec 'solutions = [
 target_os = ["ios"]
 target_os_only = "True"
 '
+gclient sync --no-history
 ```
+>将`[目标版本号]`改成需要的版本号,在[这里](https://chromium.googlesource.com/chromium/src.git/+refs)查询版本号
 
 </details>
 
