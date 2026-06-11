@@ -43,7 +43,7 @@ mkdir -p ~/chromium/src/out/Release-iphoneos/Payload
 cd ~/chromium
 ```
 
-拉取`ios`版
+拉取`ios`主线
 ```shell
 fetch --no-history ios
 ```
