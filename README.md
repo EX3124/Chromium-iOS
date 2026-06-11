@@ -43,11 +43,21 @@ mkdir -p ~/chromium/src/out/Release-iphoneos/Payload
 cd ~/chromium
 ```
 
-拉取ios分支
+拉取ios版
 ```shell
 fetch --no-history ios
 ```
 >下载约`8G`,占用约`28G`
+
+<details>
+<summary>拉取特定版本</summary>
+
+手动fetch
+```shell
+
+```
+
+</details>
 
 ## 生成编译目标
 进入源码目录
@@ -71,10 +81,11 @@ gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_co
 ```shell
 autoninja -C out/Release-iphoneos chrome
 ```
->cpu核心越多越快
+>分配的cpu核心越多越快
 
 ## 打包ipa
 ```shell
 mv ~/chromium/src/out/Release-iphoneos/Chromium.app ~/chromium/src/out/Release-iphoneos/Payload
 zip -r ~/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
 ```
+>
