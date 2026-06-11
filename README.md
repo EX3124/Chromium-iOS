@@ -98,6 +98,6 @@ autoninja -C out/Release-iphoneos chrome
 ## 打包ipa
 ```shell
 mv ~/chromium/src/out/Release-iphoneos/Chromium.app ~/chromium/src/out/Release-iphoneos/Payload
-zip -r ~/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
+zip -r ~/Downloads/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
 ```
->
+>`chromium.ipa`文件在`边栏`的`下载`中,未签名
