@@ -95,9 +95,9 @@ autoninja -C out/Release-iphoneos chrome
 >分配的cpu核心越多,编译越快
 
 <details>
-<summary>ld.lld报错</summary>
+<summary>lld报错</summary>
 
-使用系统lld重新确立编译目标
+不使用工具链中的lld,重新确立编译目标
 ```shell
 gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
 ```
