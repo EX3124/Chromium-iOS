@@ -82,9 +82,10 @@ gclient sync
 ```
 >下载约`700M`
 
-生成`args.gn`以确立编译目标
+设置构建
 ```shell
-gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_blink=true'
+echo '[gn_args]\nuse_blink = true' >~/.setup-gn
+~/chromium/src/ios/build/tools/setup-gn.py
 ```
 >占用约`2G`
 
@@ -97,9 +98,10 @@ autoninja -C out/Release-iphoneos chrome
 <details>
 <summary>lld报错</summary>
 
-不使用工具链中的lld,重新确立编译目标
+不使用工具链中的lld,重新设置构建
 ```shell
-gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
+echo '\nuse_lld = false' >~/.setup-gn
+~/chromium/src/ios/build/tools/setup-gn.py
 ```
 
 </details>
