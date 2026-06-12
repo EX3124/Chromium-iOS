@@ -23,6 +23,21 @@ xcodebuild -downloadPlatform ios
 ```
 >`root用户`环境与`普通用户`不一样,`Xcode`会找不到sdk
 
+<details>
+<summary>配置证书</summary>
+
+打开`Xcode`,在`Xcode`的菜单栏选择`Settings`,转到`Apple Accounts`选项卡,`Add Apple Account...`
+
+登入后,进入账号,选择`Personal Team`,点`Manage Certificates`,点左下角`+`号申请`Apple Development`证书
+
+右键申请的证书,点`Export Certificate`,设置密码,完成后会弹出文件夹
+
+双击`.p12`文件,输入刚设置的密码,输入当前用户的密码,将其导入`钥匙串访问`
+
+>妥善保存`.p12`文件,每台设备只能申请1张证书
+
+</details>
+
 ## 配置工具链
 拉取工具链仓库
 ```shell
