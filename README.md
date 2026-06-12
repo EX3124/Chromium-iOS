@@ -39,7 +39,7 @@ export PATH="$HOME/depot_tools:$HOME/depot_tools/python-bin:$PATH"
 ## 拉取chromium
 创建文件夹并进入
 ```shell
-mkdir -p ~/chromium/src/out/Release-iphoneos/Payload
+mkdir -p ~/chromium/src/out/Release-iphoneos
 cd ~/chromium
 ```
 
@@ -85,7 +85,7 @@ gclient sync
 
 生成`args.gn`以确立编译目标
 ```shell
-gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
+gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_blink=true'
 ```
 >占用约`2G`
 
@@ -95,9 +95,20 @@ autoninja -C out/Release-iphoneos chrome
 ```
 >分配的cpu核心越多,编译越快
 
+<details>
+<summary>ld.lld报错</summary>
+
+使用系统lld重新确立编译目标
+```shell
+gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_code_signing=false is_component_build=false target_environment="device" target_cpu="arm64" use_lld=false use_blink=true'
+```
+
+</details>
+
 ## 打包ipa
 ```shell
-mv ~/chromium/src/out/Release-iphoneos/Chromium.app ~/chromium/src/out/Release-iphoneos/Payload
-zip -r ~/chromium.ipa ~/chromium/src/out/Release-iphoneos/Payload
+mkdir Payload
+mv ~/chromium/src/out/Release-iphoneos/Chromium.app Payload
+zip -r chromium.ipa Payload
 ```
-`$HOME/chromium.ipa`,未签名
+>未签名,需要侧载
