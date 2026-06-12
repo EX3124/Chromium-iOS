@@ -38,7 +38,7 @@ export PATH="$HOME/depot_tools:$HOME/depot_tools/python-bin:$PATH"
 ## 拉取chromium
 创建文件夹并进入
 ```shell
-mkdir -p ~/chromium/src/out/Release-iphoneos
+mkdir -p ~/chromium/src
 cd ~/chromium
 ```
 
