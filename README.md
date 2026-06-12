@@ -3,11 +3,10 @@ Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/acti
 
 ## 设置Xcode
 `Xcode`的版本需要比编译目标版本高,可以在[ios_sdk_overrides.gni](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/build/config/ios/ios_sdk_overrides.gni)看到目前主线开启`blink`需要`ios26.0`,也就是[Xcode 26.0](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_26/Xcode_26_Universal.xip)或更高版本
->登录apple id以下载
 
 打开(解压)下载的`.xip`文件,将`Xcode.app`移到`应用程序`中
 
-使用以下命令查看并同意协议
+查看并同意协议
 ```shell
 sudo xcodebuild -license
 ```
