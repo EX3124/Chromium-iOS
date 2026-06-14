@@ -1,7 +1,7 @@
 # Chromium-iOS
 Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories)硬盘只有14G,很难编出工件,这里提供一个实机编译方法
 
-## 设置Xcode
+## 配置Xcode
 `Xcode`的版本需要比编译目标版本高,可以在[ios_sdk_overrides.gni](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/build/config/ios/ios_sdk_overrides.gni)看到目前主线开启`blink`需要`ios26.0`,也就是[Xcode 26.0](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_26/Xcode_26_Universal.xip)或更高版本
 
 打开(解压)下载的`.xip`文件,将`Xcode.app`移到`应用程序`中
@@ -35,7 +35,7 @@ xcodebuild -downloadPlatform ios
 
 打开`钥匙串访问`,找到刚刚导入的证书,双击打开,检查证书状态
 
-如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载对应证书
+如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载`签发者名称`中的对应证书
 
 >[!IMPORTANT]
 >妥善保存`.p12`私钥,免费开发者只能申请1张`Apple Development`证书
