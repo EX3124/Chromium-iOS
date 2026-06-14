@@ -83,7 +83,7 @@ target_os_only = "True"
 '
 gclient sync --no-history
 ```
->将`[目标版本号]`改成需要的版本号,在[Chromium src refs](https://chromium.googlesource.com/chromium/src.git/+refs)查询版本号
+>将`[目标版本号]`改成需要的版本号,在[chromium src refs](https://chromium.googlesource.com/chromium/src.git/+refs)查询版本号
 
 </details>
 
