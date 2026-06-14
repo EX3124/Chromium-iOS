@@ -38,7 +38,7 @@ xcodebuild -downloadPlatform ios
 如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载`签发者名称`中的对应证书
 
 >[!IMPORTANT]
->妥善保存`.p12`私钥,免费开发者只能申请1张`Apple Development`证书
+>妥善保存`.p12`私钥,免费开发者每36小时只能申请1张`Apple Development`证书
 
 ## 配置工具链
 拉取工具链仓库
