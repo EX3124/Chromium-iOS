@@ -33,9 +33,9 @@ xcodebuild -downloadPlatform ios
 
 双击`.p12`私钥,将其导入`钥匙串访问`
 
-打开`钥匙串访问`,找到刚刚导入的证书,右键`显示简介`,检查证书状态
+打开`钥匙串访问`,找到刚刚导入的证书,双击打开,检查证书状态
 
-如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载对应证书,`签发者名称`中的`组织单位`是对应的证书类型
+如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载对应证书
 
 >[!IMPORTANT]
 >妥善保存`.p12`私钥,免费开发者只能申请1张`Apple Development`证书
