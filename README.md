@@ -6,7 +6,7 @@ Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/acti
 
 打开(解压)下载的`.xip`文件,将`Xcode.app`移到`应用程序`中
 
-打开`Xcode`,`Agree`用户协议,输入密码,勾选`IOS 26.0`,`Download & Install`,等待下载完成
+打开`Xcode`,`Agree`用户协议,输入密码,勾选`IOS 26.0`,`Download & Install`,等待sdk完成安装
 
 ## 配置证书
 
