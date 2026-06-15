@@ -6,22 +6,7 @@ Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/acti
 
 打开(解压)下载的`.xip`文件,将`Xcode.app`移到`应用程序`中
 
-查看并同意协议
-```shell
-sudo xcodebuild -license
-```
->输入密码,按回车查看协议,输入`agree`同意协议
-
-首次运行Xcode以完成安装
-```shell
-xcodebuild -runFirstLaunch
-```
-
-下载ios sdk
-```shell
-xcodebuild -downloadPlatform ios
-```
->`root用户`环境与`普通用户`不一样,`Xcode`会找不到sdk
+打开`Xcode`,`Agree`用户协议,输入密码,勾选`IOS 26.0`,`Download & Install`,等待下载完成
 
 ## 配置证书
 
