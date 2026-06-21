@@ -89,7 +89,7 @@ gclient sync
 echo '[gn_args]\nuse_blink = true\nios_chromium_bundle_id="org.chromium.[名称]"' >~/.setup-gn
 ~/chromium/src/ios/build/tools/setup-gn.py
 ```
->苹果要求包名唯一,自己编一个`[名称]`
+>苹果要求包名唯一,随便写一个`[名称]`
 
 ## 配置签名
 
