@@ -14,12 +14,14 @@ Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/acti
 
 登入后,进入账号,选择`Personal Team`,点`Manage Certificates`,点左下角`+`号申请`Apple Development`证书
 
-打开`钥匙串访问.app`,找到刚刚导入的证书,双击打开,检查证书状态
+打开`钥匙串访问.app`,找到刚刚申请的证书,双击打开,检查证书状态
 
 如有`证书不受信任`,需要前往[Apple PKI](https://www.apple.com/certificateauthority)下载`签发者名称`中的对应证书
 
+完成导入后,Apple Development 证书状态应为`此证书有效`
+
 >[!IMPORTANT]
->申请1张`Apple Development`证书后,需要过36小时才能再次申请
+>申请`Apple Development`证书后,需要吊销证书才能重新申请,前往[Apple Developer](https://developer.apple.com/account/resources)吊销证书(仅限付费开发者)
 
 ## 配置工具链
 拉取工具链仓库
