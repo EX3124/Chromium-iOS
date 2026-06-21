@@ -12,7 +12,7 @@ Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/acti
 
 在`Xcode`的菜单栏选择`Settings`,转到`Apple Accounts`选项卡,`Add Apple Account...`
 
-登入后,进入账号,选择`Personal Team`,点`Manage Certificates`,点左下角`+`号申请`Apple Development`证书
+登入后,进入账号,选择你的团队(默认是`Personal Team`),点`Manage Certificates`,点左下角`+`号申请`Apple Development`证书
 
 打开`钥匙串访问.app`,找到刚刚申请的证书,双击打开,检查证书状态
 
@@ -91,7 +91,7 @@ echo '[gn_args]\nuse_blink = true' >~/.setup-gn
 
 ## 配置插件签名
 
-在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,选择你的`Personal Team`,它会自动配置插件签名
+在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,选择你的团队,它会自动配置插件签名
 
 <img width="1512" height="902" alt="截屏" src="https://github.com/user-attachments/assets/07e8b4e9-96eb-49b4-af65-12bcfd37fd08" />
 
