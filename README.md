@@ -89,6 +89,13 @@ echo '[gn_args]\nuse_blink = true' >~/.setup-gn
 ```
 >占用约`2G`
 
+## 配置插件签名
+
+在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,选择你的`Personal Team`,它会自动配置插件签名
+
+<img width="1512" height="902" alt="截屏" src="https://github.com/user-attachments/assets/07e8b4e9-96eb-49b4-af65-12bcfd37fd08" />
+
+
 ## 开始编译
 ```shell
 autoninja -C out/Release-iphoneos chrome
