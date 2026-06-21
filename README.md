@@ -89,9 +89,9 @@ echo '[gn_args]\nuse_blink = true' >~/.setup-gn
 ```
 >占用约`2G`
 
-## 配置插件签名
+## 自动签名
 
-在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,选择你的团队,它会自动配置插件签名
+在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,按图中顺序选取选项,在选择团队后,`Xcode`会自动注册包名
 
 <img width="1512" height="902" alt="截屏" src="https://github.com/user-attachments/assets/07e8b4e9-96eb-49b4-af65-12bcfd37fd08" />
 
@@ -100,7 +100,7 @@ echo '[gn_args]\nuse_blink = true' >~/.setup-gn
 ```shell
 autoninja -C out/Release-iphoneos chrome
 ```
->分配的cpu核心越多,编译越快
+>cpu核心越多,编译越快
 
 <details>
 <summary>lld报错</summary>
@@ -119,4 +119,3 @@ mkdir Payload
 mv ~/chromium/src/out/Release-iphoneos/Chromium.app Payload
 zip -r chromium.ipa Payload
 ```
->未签名,需要侧载
