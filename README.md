@@ -84,17 +84,14 @@ gclient sync
 
 设置构建
 ```shell
-echo '[gn_args]\nuse_blink = true' >~/.setup-gn
+echo '[gn_args]\nuse_blink = true\nios_chromium_bundle_id="org.chromium.[名称]"' >~/.setup-gn
 ~/chromium/src/ios/build/tools/setup-gn.py
 ```
->占用约`2G`
+>苹果要求包名唯一,可以将`[名称]`换成随机字符
 
-## 自动签名
+## 配置签名
 
-在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,按图中顺序选取选项,在选择团队后,`Xcode`会自动注册包名
-
-<img width="1512" height="902" alt="截屏" src="https://github.com/user-attachments/assets/07e8b4e9-96eb-49b4-af65-12bcfd37fd08" />
-
+在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`
 
 ## 开始编译
 ```shell
