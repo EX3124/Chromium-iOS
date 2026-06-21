@@ -94,7 +94,7 @@ gn gen out/Release-iphoneos --args='is_debug=false target_os="ios" ios_enable_co
 ```shell
 autoninja -C out/Release-iphoneos chrome
 ```
->分配的cpu核心越多,编译越快
+>cpu核心越多,编译越快
 
 <details>
 <summary>lld报错</summary>
