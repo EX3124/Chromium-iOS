@@ -93,7 +93,13 @@ echo '[gn_args]\nuse_blink = true\nios_chromium_bundle_id="org.chromium.[名称]
 
 ## 配置签名
 
-在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`
+在`Xcode`中打开项目`~/chromium/src/out/build/all.xcodeproj`,按图中的顺序操作,为图中标记的每个组件都勾选自动签名,并选择团队
+
+<img width="1512" height="902" alt="xcode1" src="https://github.com/user-attachments/assets/53589ad3-de6b-4ba2-8f6f-5597c9a417f2" />
+
+<img width="1512" height="902" alt="xcode2" src="https://github.com/user-attachments/assets/98d8e75e-5ecf-42b9-848c-6abd2c9024af" />
+
+>共10个`bundle identifier`,如果账号上没有10个`app id`空位,可以新建账号用于签名
 
 ## 开始编译
 ```shell
