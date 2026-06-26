@@ -1,7 +1,7 @@
 # Chromium-iOS
 Github Action的[runner](https://docs.github.com/en/enterprise-cloud@latest/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories)硬盘只有14G,很难编出工件,这里提供一个实机编译方法
 
-[越狱](https://github.com/EX3124/Chromium-iOS) | **非越狱**
+[不签名](https://github.com/EX3124/Chromium-iOS) | **签名**
 
 ## 配置Xcode
 `Xcode`的版本需要比编译目标版本高,可以在[ios_sdk_overrides.gni](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/build/config/ios/ios_sdk_overrides.gni)看到目前主线开启`blink`需要`ios26.0`,也就是[Xcode 26.0](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_26/Xcode_26_Universal.xip)或更高版本
