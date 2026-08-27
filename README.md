@@ -34,22 +34,25 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/dep
 export PATH="$HOME/depot_tools:$HOME/depot_tools/python-bin:$PATH"
 ```
 
+检查状态
+```shell
+gclient status
+```
+<details>
+<summary>SSLError</summary>
+
+再运行`gclient status`,在它运行过程中新建终端窗口,更新pip
+```shell
+~/Library/Caches/vpython-root.501/store/python_venv-jb40c0dr85g5hsbfrrqbn1m80g/contents/bin/python -m pip install --upgrade --index-url https://pypi.tuna.tsinghua.edu.cn/simple pip
+```
+</details>
+
 ## 拉取chromium
 创建文件夹并进入
 ```shell
 mkdir -p ~/chromium/src
 cd ~/chromium
 ```
-
-<details>
-<summary>设置镜像源</summary>
-
-```shell
-export VPYTHON_AR_URL=[镜像网址]
-gclient status
-```
-
-</details>
 
 拉取`ios`主线
 ```shell
