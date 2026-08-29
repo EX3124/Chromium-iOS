@@ -110,10 +110,9 @@ echo '[gn_args]\nuse_blink = true\nios_chromium_bundle_id="org.chromium.[名称]
 >共10个`bundle identifier`,如果账号上没有10个`app id`空位,可以新建账号用于签名
 
 ## 开始编译
-```shell
-autoninja -C out/Release-iphoneos chrome
-```
->cpu核心越多,编译越快
+
+目标改为`chrome`,设备改为连接上实机的设备,然后`Run`
+<img width="1512" height="1012" alt="xcode3" src="https://github.com/user-attachments/assets/33d948b4-e29f-444a-9818-3edf4ec7b33a" />
 
 <details>
 <summary>lld报错</summary>
